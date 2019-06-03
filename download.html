@@ -11,13 +11,20 @@
     <script src="public/javascripts/qrcode/jquery.min.js"></script>
     <script type="text/javascript" src="public/javascripts/qrcode/jquery.qrcode.js"></script>
     <script type="text/javascript" src="public/javascripts/qrcode/qrcode.js"></script>
-    <title>ios ipa server</title>
+    <title>BitMesh App</title>
+    <style>
+      #qrcodeTable {
+        text-align: center;
+      }
+    </style>
 </head>
 <body>
     <h3>【微信扫描此页面不能显示】，请点击右上角“在Safari中打开”</h3>
-    <div id="qrcodeTable"></div>
+    <div id="qrcodeTable">
+      <img src="app.qrcode.png" />
+    </div>
     <h3>
-        <a id='cer' href="https://192.168.0.141:1234/cer/myCA.cer">如果出现【无法验证服务器身份】或【无法连接到】，请点击此链接安装证书</a>
+
     </h3>
     <ul>
         <li>
@@ -33,10 +40,10 @@
     </ul>
     <script>
     	var url = location.href;
-    	$('#qrcodeTable').qrcode({
-    		render	: "table",
-    		text	: url
-    	});
+    	// $('#qrcodeTable').qrcode({
+    	// 	render	: "table",
+    	// 	text	: url
+    	// });
     	$('.link').click(function(){
             if(confirm("点击安装后会自动下载app, 请返回桌面查看")){
                 window.location.href = $(this).attr('downloadUrl');
